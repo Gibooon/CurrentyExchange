@@ -2,13 +2,36 @@
 <html lang="pl">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="device-width, initial-scale=1.0">
+        <meta name="viewport" content="device-width, initial-scale=1">
         <title>Exchange</title>
         <script src="waluty.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <style>
+            div.box {
+                height:160px;
+                width:160px;
+                background-color:lightblue;
+                display: inline-block;
+            }
+            section {
+                width: 100vw;
+                min-height: 60vh;
+            }
+            header, footer {
+                width: 100vw;
+                height: 20vh;
+                background-color: blueviolet;
+            }
+        </style>
     </head>
     <body>
-        <nav></nav>
-        <section></section>
+        <header></header>
+        <section>
+            <div class="box" id="one">- Euro -</div>
+            <div class="box" id="two">- Dolar amerykański -</div>
+            <div class="box" id="three">- Funt brytyjski -</div>
+            <div class="box" id="four">- Frank szwajcarski -</div>
+        </section>
         <footer></footer>
     </body>
 </html>
