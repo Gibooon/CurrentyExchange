@@ -15,6 +15,15 @@ var kursE;
 var kursU;
 var kursG;
 var kursC;
+
+//funkcja sprawdzajaca tendencje danego kursu
+function tendency(){
+document.getElementsByClassName("column").style.backgroundColor = "red";
+}
+function tendencyOff(){
+  document.getElementsByClassName("column").style.backgroundColor = "#94aac0";
+  }
+
 /*
 //kurs EUR
 const EURxhttp = new XMLHttpRequest();
