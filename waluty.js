@@ -1,13 +1,15 @@
-var myHeaders = new Headers();
-myHeaders.append("apikey", "KFAcZ5mAU6am6RsF1ru23D3qn6t5aYC9");
+const GBPxhttp = new XMLHttpRequest();
+GBPxhttp.onload = function() {
+  document.getElementById("three").innerHTML = this.responseText;
+}
 
-var requestOptions = {
-  method: 'GET',
-  redirect: 'follow',
-  headers: myHeaders
-};
+var base = "PLN";
+var to = "GBP";
+var amount = 1;
+var apikey = "KFAcZ5mAU6am6RsF1ru23D3qn6t5aYC9";
 
-fetch("https://api.apilayer.com/exchangerates_data/latest?symbols=symbols&base=PLN", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+GBPxhttp.open("GET", "https://api.apilayer.com/exchangerates_data/convert?to="+to+"&from="+base+"&amount="+amount+"&apikey="+apikey);
+GBPxhttp.send();
+
+
+  //.then(result => document.getElementById("three").innerHTML += result)
