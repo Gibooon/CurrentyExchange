@@ -2,23 +2,25 @@
 <html lang="pl">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1">
+        <meta name="viewport" content="width=device-width initial-scale=1">
         <title>Exchange</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <style>
             div.column {
-                background-color:#94aac0;
+                background-color:#a585cc;
                 display: inline-block;
                 text-align: center;
                 border: 1px solid black;
+                height: 120vh;
 
-            }
+}
             section {
                 width: 100vw;
-                min-height: 86vh;
+                height: 120vh;
             }
             header, footer {
                 width: 100vw;
-                height: 7vh;
+                height: 5vh;
                 background-color: blueviolet;
             }
             footer {
@@ -28,48 +30,49 @@
             }
             .flag{
                 height:100px;
+                border: 1px double black;
             }
         </style>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     </head>
     <body>
-        <header></header>
+        <header class="is-size-4 has-text-weight-bold has-text-centered has-text-black">Kurs złotego (PLN) względem czterech walut</header>
         <section>
-            <div class="columns">
-                <div class="column" id="eur" onmouseover="tendency()" onmouseleave="tendencyOff()">
+            <div class="columns has-text-black">
+                <div class="column" id="eur">
                     Euro<br>
                     <div><img class="flag" src="eu.svg" alt="Flag of European Union"></div>
-                    <h3>Aktualny kurs: </h3>
-                    <h3>Kurs -1 dzień: </h3>
-                    <h3>Kurs -7 dni: </h3>
-                    <h3>Kurs -30 dni: </h3>
+                    <p class="is-size-6 has-text-weight-semibold">Aktualny kurs: <h6 class="is-size-7" id="e0"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -1 dzień: <h6 class="is-size-7" id="e1"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -7 dni: <h6 class="is-size-7" id="e7"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -30 dni: <h6 class="is-size-7" id="e3"></h6></p>
                 </div>
                 <div class="column" id="usd">
                     Dolar amerykański<br>
                     <div ><img class="flag" src="us.svg" alt="Flag of United States of America"></div>
-                    <h3>Aktualny kurs: </h3>
-                    <h3>Kurs -1 dzień: </h3>
-                    <h3>Kurs -7 dni: </h3>
-                    <h3>Kurs -30 dni: </h3>
+                    <p class="is-size-6 has-text-weight-semibold">Aktualny kurs: <h6 class="is-size-7" id="u0"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -1 dzień: <h6 class="is-size-7" id="u1"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -7 dni: <h6 class="is-size-7" id="u7"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -30 dni: <h6 class="is-size-7" id="u3"></h6></p>
                 </div>
                 <div class="column" id="gbp">
                     Funt brytyjski<br>
                     <div><img class="flag" src="gb.svg" alt="Flag of Great Britain"></div>
-                    <h3>Aktualny kurs: </h3>
-                    <h3>Kurs -1 dzień: </h3>
-                    <h3>Kurs -7 dni: </h3>
-                    <h3>Kurs -30 dni: </h3>
+                    <p class="is-size-6 has-text-weight-semibold">Aktualny kurs: <h6 class="is-size-7" id="g0"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -1 dzień: <h6 class="is-size-7" id="g1"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -7 dni: <h6 class="is-size-7" id="g7"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -30 dni: <h6 class="is-size-7" id="g3"></h6></p>
                 </div>
                 <div class="column" id="chf">
                     Frank szwajcarski<br>
-                    <h3>Aktualny kurs: </h3>
-                    <h3>Kurs -1 dzień: </h3>
-                    <h3>Kurs -7 dni: </h3>
-                    <h3>Kurs -30 dni: </h3>
+                    <div ><img class="flag" src="ch.svg" alt="Flag of Switzerland"></div>
+                    <p class="is-size-6 has-text-weight-semibold">Aktualny kurs: <h6 class="is-size-7" id="c0"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -1 dzień: <h6 class="is-size-7" id="c1"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -7 dni: <h6 class="is-size-7" id="c7"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -30 dni: <h6 class="is-size-7" id="c3"></h6></p>
                 </div>
             </div>
         </section>
-        <footer id="stopka">©2022 Szymon Tomasiak</footer>
+        <footer id="stopka" class="has-text-grey-lighter is-hover-text-red">©2022 Szymon Tomasiak</footer>
         <!--skrypt js-->
         <script src="waluty.js"></script>
     </body>
