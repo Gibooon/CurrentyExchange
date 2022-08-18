@@ -15,12 +15,13 @@
 
 }
             section {
+                border-top: -10px;
                 width: 100vw;
                 height: 120vh;
             }
             header, footer {
                 width: 100vw;
-                height: 5vh;
+                height: 7vh;
                 background-color: blueviolet;
             }
             footer {
@@ -38,37 +39,77 @@
         <header class="is-size-4 has-text-weight-bold has-text-centered has-text-black">Kurs złotego (PLN) względem czterech walut</header>
         <section>
             <div class="columns has-text-black">
+                <!--EURO-->
                 <div class="column" id="eur">
                     Euro<br>
                     <div><img class="flag" src="eu.svg" alt="Flag of European Union"></div>
-                    <p class="is-size-6 has-text-weight-semibold">Aktualny kurs: <h6 class="is-size-7" id="e0"></h6></p>
-                    <p class="is-size-6 has-text-weight-semibold">Kurs -1 dzień: <h6 class="is-size-7" id="e1"></h6></p>
-                    <p class="is-size-6 has-text-weight-semibold">Kurs -7 dni: <h6 class="is-size-7" id="e7"></h6></p>
-                    <p class="is-size-6 has-text-weight-semibold">Kurs -30 dni: <h6 class="is-size-7" id="e3"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Aktualny kurs:
+                        <h6 class="is-size-7" id="e0"></h6>
+                        <div class="symbol" id="es"></div>
+                    </p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -1 dzień:
+                        <h6 class="is-size-7" id="e1"></h6>
+                    </p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -7 dni:
+                        <h6 class="is-size-7" id="e7"></h6>
+                    </p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -30 dni:
+                        <h6 class="is-size-7" id="e3"></h6>
+                    </p>
                 </div>
+                <!--DOLAR-->
                 <div class="column" id="usd">
                     Dolar amerykański<br>
                     <div ><img class="flag" src="us.svg" alt="Flag of United States of America"></div>
-                    <p class="is-size-6 has-text-weight-semibold">Aktualny kurs: <h6 class="is-size-7" id="u0"></h6></p>
-                    <p class="is-size-6 has-text-weight-semibold">Kurs -1 dzień: <h6 class="is-size-7" id="u1"></h6></p>
-                    <p class="is-size-6 has-text-weight-semibold">Kurs -7 dni: <h6 class="is-size-7" id="u7"></h6></p>
-                    <p class="is-size-6 has-text-weight-semibold">Kurs -30 dni: <h6 class="is-size-7" id="u3"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Aktualny kurs:
+                        <h6 class="is-size-7" id="u0"></h6>
+                        <div class="symbol" id="us"></div>
+                    </p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -1 dzień:
+                        <h6 class="is-size-7" id="u1"></h6>
+                    </p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -7 dni:
+                        <h6 class="is-size-7" id="u7"></h6>
+                    </p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -30 dni:
+                        <h6 class="is-size-7" id="u3"></h6>
+                    </p>
                 </div>
+                <!--FUNT-->
                 <div class="column" id="gbp">
                     Funt brytyjski<br>
                     <div><img class="flag" src="gb.svg" alt="Flag of Great Britain"></div>
-                    <p class="is-size-6 has-text-weight-semibold">Aktualny kurs: <h6 class="is-size-7" id="g0"></h6></p>
-                    <p class="is-size-6 has-text-weight-semibold">Kurs -1 dzień: <h6 class="is-size-7" id="g1"></h6></p>
-                    <p class="is-size-6 has-text-weight-semibold">Kurs -7 dni: <h6 class="is-size-7" id="g7"></h6></p>
-                    <p class="is-size-6 has-text-weight-semibold">Kurs -30 dni: <h6 class="is-size-7" id="g3"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Aktualny kurs:
+                        <h6 class="is-size-7" id="g0"></h6>
+                        <div class="symbol" id="gs"></div>
+                    </p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -1 dzień:
+                        <h6 class="is-size-7" id="g1"></h6>
+                    </p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -7 dni:
+                        <h6 class="is-size-7" id="g7"></h6>
+                    </p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -30 dni:
+                        <h6 class="is-size-7" id="g3"></h6>
+                    </p>
                 </div>
+                <!--FRANK-->
                 <div class="column" id="chf">
                     Frank szwajcarski<br>
                     <div ><img class="flag" src="ch.svg" alt="Flag of Switzerland"></div>
-                    <p class="is-size-6 has-text-weight-semibold">Aktualny kurs: <h6 class="is-size-7" id="c0"></h6></p>
-                    <p class="is-size-6 has-text-weight-semibold">Kurs -1 dzień: <h6 class="is-size-7" id="c1"></h6></p>
-                    <p class="is-size-6 has-text-weight-semibold">Kurs -7 dni: <h6 class="is-size-7" id="c7"></h6></p>
-                    <p class="is-size-6 has-text-weight-semibold">Kurs -30 dni: <h6 class="is-size-7" id="c3"></h6></p>
+                    <p class="is-size-6 has-text-weight-semibold">Aktualny kurs:
+                        <h6 class="is-size-7" id="c0"></h6>
+                        <div class="symbol" id="cs"></div>
+                    </p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -1 dzień:
+                        <h6 class="is-size-7" id="c1"></h6>
+                    </p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -7 dni:
+                        <h6 class="is-size-7" id="c7"></h6>
+                    </p>
+                    <p class="is-size-6 has-text-weight-semibold">Kurs -30 dni:
+                        <h6 class="is-size-7" id="c3"></h6>
+                    </p>
                 </div>
             </div>
         </section>
