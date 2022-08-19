@@ -42,7 +42,7 @@ if(day1 < 0){
 }
 var date1 = year1+"-"+month1+"-"+day1;
 
-//data sprzed 7 dniu
+//data sprzed 7 dni
 var date7 = new Date();
 var day7 = date7.getDate()-7;
 var month7 = +date7.getMonth()+1;
@@ -116,28 +116,28 @@ var date3 = year3+"-"+month3+"-"+day3;
 var apikey = "R9PflQ51h9OMZlrgXaGARqxw33wRaCd3";
 //zmienne przetrzymujace kurs waluty
 //aktualny kurs
-var kursE;
-var kursU;
-var kursG;
-var kursC;
+var kursE = 0;
+var kursU = 0;
+var kursG = 0;
+var kursC = 0;
 //kurs sprzed 1 dnia
-var kurs1E;
-var kurs1U;
-var kurs1G;
-var kurs1C;
+var kurs1E = 0;
+var kurs1U = 0;
+var kurs1G = 0;
+var kurs1C = 0;
 //kurs sprzed tygodnia
-var kurs7E;
-var kurs7U;
-var kurs7G;
-var kurs7C;
+var kurs7E = 0;
+var kurs7U = 0;
+var kurs7G = 0;
+var kurs7C = 0;
 //kurs sprzed miesiaca
-var kurs3E;
-var kurs3U;
-var kurs3G;
-var kurs3C;
+var kurs3E = 0;
+var kurs3U = 0;
+var kurs3G = 0;
+var kurs3C = 0;
+
 
 //Sprawdzanie aktualnego kursu poszczególnych walut za pomocą obiektu JS XMLHttpRequest
-
 //kurs EUR
 //actual
 const EURxhttp = new XMLHttpRequest();
@@ -175,7 +175,6 @@ EUR3xhttp.onload = function() {
 }
 EUR3xhttp.open("GET", "https://api.apilayer.com/exchangerates_data/"+date3+"?symbols=PLN&base=EUR&apikey="+apikey);
 EUR3xhttp.send();
-/*
 
 //kurs USD
 //actual
@@ -292,46 +291,41 @@ CHF3xhttp.open("GET", "https://api.apilayer.com/exchangerates_data/"+date3+"?sym
 CHF3xhttp.send();
 
 
-*/
+/*
 //sprawdzanie tendencji kursow
-//EURO
-const eel = document.getElementById("es");
-var euroTendency = kursE-kurs1E;
-if(euroTendency > 0){
-  eel.innerHTML = " +";
-  eel.style.color = "red";
-}else if(euroTendency < 0){
-  eel.innerHTML = " -";
-  eel.style.color = "green";
-}
-//DOLAR AMERYKANSKI
-const uel = document.getElementById("us");
-var dollarTendency = kursU-kurs1U
-if(dollarTendency > 0){
-  uel.innerHTML = " +";
-  uel.style.color = "red";
-}else if(dollarTendency < 0){
-  uel.innerHTML = " -";
-  uel.style.color = "green";
-}
-//FUNT BRYTYJSKI
-const gel = document.getElementById("gs");
-var poundTendency = kursG-kurs1G
-if(poundTendency > 0){
-  gel.innerHTML = " +";
-  gel.style.color = "red";
-}else if(poundTendency < 0){
-  gel.innerHTML = " -";
-  gel.style.color = "green";
+function tendency(act, yest, obj){
+  var tendency = act - yest;
+  if(tendency > 0){
+    obj.innerHTML = " +";
+    obj.style.color ="red";
+    console.log("tendencja wzrostowa");
+  }
+  else if(tendency < 0){
+    obj.innerHTML = " -";
+    obj.style.color = "green";
+    console.log("tendencja spadkowa")
+  }
 }
 
-//FRANK SZWAJCARSKI
-const cel = document.getElementById("cs");
-var francTendency = kursC-kurs1C
-if(francTendency > 0){
-  cel.innerHTML = "+";
-  cel.style.color = "red";
-}else if(francTendency < 0){
-  cel.innerHTML = " -";
-  cel.style.color = "green";
-}
+  //EURO
+  const E = document.getElementById("e0").innerHTML;
+  const E1 = document.getElementById("e1").innerHTML;;
+  const eel = document.getElementById("es");
+  tendency(E, E1, eel);
+  
+  //DOLAR AMERYKANSKI
+  const U = document.getElementById("u0").innerHTML;
+  const U1 = document.getElementById("u1").innerHTML;
+  const uel = document.getElementById("us");
+  tendency(U, U1, uel);
+  //FUNT BRYTYJSKI
+  const G = document.getElementById("g0").innerHTML;
+  const G1 = document.getElementById("g1").innerHTML;
+  const gel = document.getElementById("gs");
+  tendency(G, G1, gel);
+
+  //FRANK SZWAJCARSKI
+  const C = document.getElementById("c0").innerHTML;
+  const C1 = document.getElementById("c1").innerHTML;
+  const cel = document.getElementById("cs");
+  tendency(C, C1, cel)
